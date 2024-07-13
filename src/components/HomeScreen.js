@@ -1,6 +1,11 @@
+/* Initial Home Screen which holds the card as a bg and a button to open the modal */
+
 import React, { useState } from 'react';
 import { Box, Button, Typography, Card, CardContent } from '@mui/material';
 import RepoModal from './RepoModal';
+import homeScreenStyles from '../styles/homeScreenStyles'
+import {HOME_SCREEN_TITLE, MAIN_TITLE_COLOR, OPEN_MODAL_BUTTON } from "../utils/constants"
+import AddIcon from '@mui/icons-material/Add';
 
 const Home = () => {
   // Modal Status state i.e. open ,close
@@ -13,43 +18,27 @@ const Home = () => {
   return (
     // Box is the outermost container of the content
     <Box
-      sx={{
-        display: 'flex',
-        minHeight: '100vh',
-        backgroundColor: '#ffff',
-        padding: 2,
-      }}
+      sx={homeScreenStyles.outerBox}
     >
     {/* Inner container */}
       <Card
-        sx={{
-          width: '100%',
-          backgroundColor: '#E4E7EC',
-          borderRadius: 2,
-          boxShadow: 3,
-        }}
+        sx={homeScreenStyles.innerCard}
       >
         {/* Main content */}
         <CardContent>
             {/* Heading */}
-          <Typography variant="h4" gutterBottom color='#101828'>
-            Github Repository Language
+          <Typography variant="h4" gutterBottom color={MAIN_TITLE_COLOR}>
+            {HOME_SCREEN_TITLE}
           </Typography>
           {/* Button to open modal */}
           <Button
             variant="contained"
             color="secondary"
             onClick={handleOpen}
-            sx={{
-              mt: 2,
-              backgroundColor: '#265A62',
-              color: 'white',
-              '&:hover': {
-                backgroundColor: '#374151',
-              },
-            }}
+            sx={homeScreenStyles.openButton}
           >
-            Open Pie Chart +
+            {OPEN_MODAL_BUTTON}
+            <AddIcon />
           </Button>
           <RepoModal open={open} onClose={handleClose} />
         </CardContent>

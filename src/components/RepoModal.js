@@ -1,11 +1,29 @@
+/* This component is the modal container */
+
 import React, { useState, useEffect } from 'react';
-import { Modal, Box, IconButton, Typography, Link } from '@mui/material';
+import { Modal, Box, IconButton, Typography } from '@mui/material';
+import GitRepoDropdown from './GitRepoDropdown';
+import GitRepoLanguages from './GitRepoLanguages';
 import CloseIcon from '@mui/icons-material/Close';
+import modalStyles from '../styles/modalStyles';
+import { TITLE_TEXT_MODAL, REPO_SELECT_LABEL, CLOSE_ICON_COLOR } from '../utils/constants';
 
 const RepoModal = ({ open, onClose }) => {
+  // State to get the selected value
+  const [selectedRepoUrl, setSelectedRepoUrl] = useState('');
+
+  // To reset the value when the modal is closed
+  useEffect(() => {
+    if (!open) {
+      setSelectedRepoUrl('');
+    }
+  }, [open]);
+
+  const handleSelectRepo = (repoUrl) => {
+    setSelectedRepoUrl(repoUrl);
+  };
 
   return (
-    // Modal to hold the content
     <Modal
       open={open}
       onClose={onClose}
@@ -13,45 +31,24 @@ const RepoModal = ({ open, onClose }) => {
       aria-describedby="modal-description"
     >
       {/* Container */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 500,
-          bgcolor: 'background.paper',
-          boxShadow: 24,
-          p: 4,
-          borderRadius: 2,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-        }}
-      >
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-          {/* Modal Heading */}
+      <Box sx={modalStyles.modalBox}>
+        <Box sx={modalStyles.header}>
+          {/* Modal Title */}
           <Typography variant="h6" id="modal-title">
-            Github Repository Language Pie Chart
+            {TITLE_TEXT_MODAL}
           </Typography>
-          {/* Close button at top right */}
-          <IconButton onClick={onClose} sx={{ color: '#0D6EFD' }}>
-            <CloseIcon />
+          {/* Closed Button */}
+          <IconButton onClick={onClose} sx={modalStyles.closeButton}>
+            <CloseIcon sx={{ color: CLOSE_ICON_COLOR }} />
           </IconButton>
         </Box>
-        {/* Modal Content */}
-        <Box id="modal-description" sx={{ width: '100%' }}>
-          <Typography variant="body1" sx={{ mt: 2, mb: 2 }}>
-            Select Github Repository
+        {/* GIT Repo select Drop down */}
+        <Box id="modal-description" sx={modalStyles.contentBox}>
+          <Typography variant="body1" sx={modalStyles.typography}>
+            {REPO_SELECT_LABEL}
           </Typography>
-          {/* Link at the bottom of the modal */}
-          <Link
-            href="#"
-            underline="hover"
-            sx={{ display: 'block', mt: 2, color: '#0D6EFD' }}
-          >
-            View details
-          </Link>
+          <GitRepoDropdown onSelectRepo={handleSelectRepo} />
+          {selectedRepoUrl && <GitRepoLanguages repoUrl={selectedRepoUrl} />}
         </Box>
       </Box>
     </Modal>
