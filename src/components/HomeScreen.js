@@ -20,12 +20,12 @@ const Home = () => {
     <Box
       sx={homeScreenStyles.outerBox}
     >
-    {/* Inner container */}
+      {/* Inner container */}
       <Card
         sx={homeScreenStyles.innerCard}
       >
         {/* Main content */}
-        <CardContent>
+        <CardContent sx={homeScreenStyles.cardContent}>
             {/* Heading */}
           <Typography variant="h4" gutterBottom 
           color={MAIN_TITLE_COLOR}
@@ -33,6 +33,7 @@ const Home = () => {
           >
             {HOME_SCREEN_TITLE}
           </Typography>
+
           {/* Button to open modal */}
           <Button
             variant="contained"
@@ -47,6 +48,7 @@ const Home = () => {
         </CardContent>
       </Card>
     </Box>
+
   );
 };
 
