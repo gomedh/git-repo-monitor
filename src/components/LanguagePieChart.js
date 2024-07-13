@@ -28,7 +28,7 @@ const LanguagePieChart = ({ languages }) => {
           dataKey="value"
           cx="50%"
           cy="50%"
-          outerRadius={100}
+          outerRadius={120}
           labelLine={false}
         >
           {data.map((entry, index) => (

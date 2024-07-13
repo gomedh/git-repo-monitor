@@ -65,7 +65,7 @@ const GitRepoLanguages = React.memo(({ repoUrl }) => {
     <Box sx={repoLanguageStyles.container}>
       <Grid container spacing={2} alignItems="center">
         {/* Languages */}
-        <Grid item xs={5} sx={{ alignSelf: 'flex-start', mt: -2 }}>
+        <Grid item xs={5} sx={{ alignSelf: 'flex-start'}}>
           {languageItems}
         </Grid>
         <Grid item xs={7}>

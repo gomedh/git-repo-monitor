@@ -19,7 +19,7 @@ const ViewDetailsModal = ({ open, onClose, languages, totalBytes }) => {
       <Box sx={modalStyles.modalBox}>
         <Box sx={modalStyles.header}>
           {/* Title */}
-        <Typography variant="h6" id="details-modal-title">
+        <Typography variant="h6" id="details-modal-title" sx={modalStyles.TitleText}>
           {DETAILS_TITLE}
         </Typography>
         {/* Close Button */}

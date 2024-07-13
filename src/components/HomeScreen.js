@@ -27,7 +27,10 @@ const Home = () => {
         {/* Main content */}
         <CardContent>
             {/* Heading */}
-          <Typography variant="h4" gutterBottom color={MAIN_TITLE_COLOR}>
+          <Typography variant="h4" gutterBottom 
+          color={MAIN_TITLE_COLOR}
+          sx={homeScreenStyles.BoldText}
+          >
             {HOME_SCREEN_TITLE}
           </Typography>
           {/* Button to open modal */}

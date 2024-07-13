@@ -1,3 +1,5 @@
+import {OPEN_DIALOG_BUTTON_COLOR, CARD_BG_COLOR} from "../utils/constants"
+
 const homeScreenStyles = {
     outerBox: {
       display: 'flex',
@@ -7,17 +9,22 @@ const homeScreenStyles = {
     },
     innerCard: {
       width: '100%',
-      backgroundColor: '#E4E7EC',
-      borderRadius: 2,
+      backgroundColor: CARD_BG_COLOR,
+      borderRadius: 4,
       boxShadow: 3,
     },
     openButton: {
         mt: 2,
-        backgroundColor: '#4b5563',
+        textTransform: 'none',
+        fontWeight: 'bold',
+        backgroundColor: OPEN_DIALOG_BUTTON_COLOR,
         color: 'white',
         '&:hover': {
             backgroundColor: '#374151',
         }
+    },
+    BoldText: {
+      fontWeight: 'bold',
     }
   };
   

@@ -30,19 +30,18 @@ const modalStyles = {
     link: {
       display: 'flex',
       alignItems: 'center',
-      mt: 2,
+      mt: 1,
+      fontWeight: 'bold',
       color: COLOR_CTA_LINK,
-    },
-    legend: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
     },
     languageText: {
       mb: 1,
     },
     modalContent: {
       marginTop: 2
+    },
+    TitleText: {
+      fontWeight: 'bold',
     }
   };
   

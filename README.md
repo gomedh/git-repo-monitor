@@ -44,5 +44,11 @@ To get started with this project, follow these steps:
 - View the top 5 programming languages used in the selected repository, displayed through a pie chart.
 - Click on the View Details link to see the percentage usage of the programming languages.
 
+## Acknowledgements
+
+1. GitHub API: For providing repository data.
+2. Material UI: For the styling and user interface components.
+3. Recharts: For the charting library used to visualize programming languages.
+
 
 

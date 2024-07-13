@@ -30,7 +30,11 @@ const GitRepoDropdown = ({ onSelectRepo }) => {
   };
 
   return (
-    <FormControl fullWidth margin="normal">
+    <FormControl fullWidth margin="normal"
+    sx={{
+      marginTop: '7px', // To adjust the margin between the label and the dropdown
+    }}
+    >
       <InputLabel id="repo-select-label">{DROPDOWN_PLACEHOLDER}</InputLabel>
       <Select
         labelId="repo-select-label"

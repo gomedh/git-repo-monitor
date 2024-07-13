@@ -34,7 +34,7 @@ const RepoModal = ({ open, onClose }) => {
       <Box sx={modalStyles.modalBox}>
         <Box sx={modalStyles.header}>
           {/* Modal Title */}
-          <Typography variant="h6" id="modal-title">
+          <Typography variant="h6" id="modal-title" sx={modalStyles.TitleText}>
             {TITLE_TEXT_MODAL}
           </Typography>
           {/* Closed Button */}
