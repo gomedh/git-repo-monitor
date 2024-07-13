@@ -1,19 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Box, Button, Typography, Card, CardContent } from '@mui/material';
+import RepoModal from './RepoModal';
 
 const Home = () => {
-    return (
-        <div className='h-screen w-screen p-8'>
-            <div className='bg-[#E4E7EC] rounded-3xl p-8 w-full h-full'>
-                <div className='h-full'>
-                    <h1 className='text-[#101828] font-bold'>Github Repository Language</h1>
-                    <button className='bg-[#265A62] text-white px-6 py-2 mt-6 rounded-lg hover:bg-opacity-80 hover:cursor-pointer'
-                    >
-                        Open Pie Chart +
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
+  // Modal Status state i.e. open ,close
+  const [open, setOpen] = useState(false);
+
+  // Event handlers to handle modal open or close
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    // Box is the outermost container of the content
+    <Box
+      sx={{
+        display: 'flex',
+        minHeight: '100vh',
+        backgroundColor: '#ffff',
+        padding: 2,
+      }}
+    >
+    {/* Inner container */}
+      <Card
+        sx={{
+          width: '100%',
+          backgroundColor: '#E4E7EC',
+          borderRadius: 2,
+          boxShadow: 3,
+        }}
+      >
+        {/* Main content */}
+        <CardContent>
+            {/* Heading */}
+          <Typography variant="h4" gutterBottom color='#101828'>
+            Github Repository Language
+          </Typography>
+          {/* Button to open modal */}
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={handleOpen}
+            sx={{
+              mt: 2,
+              backgroundColor: '#265A62',
+              color: 'white',
+              '&:hover': {
+                backgroundColor: '#374151',
+              },
+            }}
+          >
+            Open Pie Chart +
+          </Button>
+          <RepoModal open={open} onClose={handleClose} />
+        </CardContent>
+      </Card>
+    </Box>
+  );
 };
 
 export default Home;
