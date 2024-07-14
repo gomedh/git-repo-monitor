@@ -4,7 +4,6 @@ import LanguagePieChart from './LanguagePieChart';
 import useGetRepoLanguages from '../hooks/useGetRepoLanguages';
 import modalStyles from '../styles/modalStyles';
 import repoLanguageStyles from '../styles/repoLanguageStyles';
-import ViewDetailsModal from './ViewDetailsModal';
 import { VIEW_DETAILS_TEXT } from '../utils/constants';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -77,13 +76,6 @@ const GitRepoLanguages = React.memo(({ repoUrl }) => {
         {VIEW_DETAILS_TEXT}
         <ChevronRightIcon sx={{ ml: 0.5 }} />
       </Link>
-      {/* View Details Modal */}
-      <ViewDetailsModal
-        open={detailsOpen}
-        onClose={handleCloseDetails}
-        languages={languages}
-        totalBytes={totalBytes}
-      />
     </Box>
   );
 });

@@ -42,7 +42,6 @@ To get started with this project, follow these steps:
 - Click on the Open Pie Chart Button
 - Use the dropdown menu to select one of the available TypeScript repositories.
 - View the top 5 programming languages used in the selected repository, displayed through a pie chart.
-- Click on the View Details link to see the percentage usage of the programming languages.
 
 ## Acknowledgements
 
