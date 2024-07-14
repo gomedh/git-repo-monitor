@@ -6,6 +6,8 @@ import modalStyles from '../styles/modalStyles';
 import repoLanguageStyles from '../styles/repoLanguageStyles';
 import { VIEW_DETAILS_TEXT } from '../utils/constants';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import PlaceHolder from '../utils/PlaceHolder'
+import ViewDetails from '../components/ViewDetails'
 
 const GitRepoLanguages = React.memo(({ repoUrl }) => {
   // Call to get the languages
@@ -39,22 +41,7 @@ const GitRepoLanguages = React.memo(({ repoUrl }) => {
 
   if (loading) {
     // Placeholder for loading state to maintain layout when option is changed in dropdown
-    return (
-      <Box sx={repoLanguageStyles.container}>
-        <Grid container spacing={2} alignItems="center">
-          <Grid item xs={5} sx={{ alignSelf: 'flex-start', mt: -2 }}>
-            <CircularProgress size={24} /> {/* Spinner loader */}
-          </Grid>
-          <Grid item xs={7}>
-            <LanguagePieChart languages={{}} /> {/* Placeholder chart */}
-          </Grid>
-        </Grid>
-        <Link href="#" underline="hover" sx={modalStyles.link} onClick={handleViewDetails}>
-          {VIEW_DETAILS_TEXT}
-          <ChevronRightIcon sx={{ ml: 0.5 }} />
-        </Link>
-      </Box>
-    );
+    return PlaceHolder();
   }
 
   if (error) return <Typography>Error: {error}</Typography>;
@@ -72,10 +59,7 @@ const GitRepoLanguages = React.memo(({ repoUrl }) => {
         </Grid>
       </Grid>
       {/* Link to view details */}
-      <Link href="#" underline="hover" sx={modalStyles.link} onClick={handleViewDetails}>
-        {VIEW_DETAILS_TEXT}
-        <ChevronRightIcon sx={{ ml: 0.5 }} />
-      </Link>
+      <ViewDetails />
     </Box>
   );
 });

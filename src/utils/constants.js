@@ -1,7 +1,7 @@
 // Color Pallette Array
 export const CHART_COLORS = [
   '#9E77ED', '#FEA500',
-  '#6F52ED', '#FFA726', 
+  '#e6e600', '#cc9900', 
   '#66BB6A'
 ];
 

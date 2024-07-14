@@ -7,6 +7,7 @@ import GitRepoLanguages from './GitRepoLanguages';
 import CloseIcon from '@mui/icons-material/Close';
 import modalStyles from '../styles/modalStyles';
 import { TITLE_TEXT_MODAL, REPO_SELECT_LABEL, CLOSE_ICON_COLOR } from '../utils/constants';
+import PlaceHolder from '../utils/PlaceHolder';
 
 const RepoModal = ({ open, onClose }) => {
   // State to get the selected value
@@ -48,7 +49,7 @@ const RepoModal = ({ open, onClose }) => {
             {REPO_SELECT_LABEL}
           </Typography>
           <GitRepoDropdown onSelectRepo={handleSelectRepo} />
-          {selectedRepoUrl && <GitRepoLanguages repoUrl={selectedRepoUrl} />}
+          {selectedRepoUrl &&  <GitRepoLanguages repoUrl={selectedRepoUrl} /> }
         </Box>
       </Box>
     </Modal>

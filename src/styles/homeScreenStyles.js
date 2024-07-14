@@ -3,7 +3,7 @@ import { OPEN_DIALOG_BUTTON_COLOR, CARD_BG_COLOR } from "../utils/constants";
 const homeScreenStyles = {
   outerBox: {
     display: 'flex',
-    minHeight: '100vh',
+    minHeight: '90vh',
     backgroundColor: '#ffff',
     padding: 3,
   },
