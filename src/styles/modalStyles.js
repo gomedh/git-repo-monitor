@@ -23,10 +23,10 @@ const modalStyles = {
     contentBox: {
       width: '100%',
     },
-    selectTypography: {
-      mt: 2,
-      mb: 2,
-    },
+    // selectTypography: {
+    //   mt: 2,
+    //   mb: 2,
+    // },
     link: {
       display: 'flex',
       alignItems: 'center',
@@ -34,12 +34,12 @@ const modalStyles = {
       fontWeight: 'bold',
       color: COLOR_CTA_LINK,
     },
-    languageText: {
-      mb: 1,
-    },
-    modalContent: {
-      marginTop: 2
-    },
+    // languageText: {
+    //   mb: 1,
+    // },
+    // modalContent: {
+    //   marginTop: 2
+    // },
     TitleText: {
       fontWeight: 'bold',
     }

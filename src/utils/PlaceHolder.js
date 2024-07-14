@@ -1,3 +1,4 @@
+/* Placeholder component util to manage the height of the  */
 import React from 'react';
 import { Box, Grid, CircularProgress } from '@mui/material';
 import LanguagePieChart from '../components/LanguagePieChart';

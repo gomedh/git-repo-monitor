@@ -7,9 +7,9 @@ import { GIT_HUB_API, API_OPTIONS, ERROR_TEXT, DROPDOWN_PLACEHOLDER } from '../u
 
 const GitRepoDropdown = ({ onSelectRepo }) => {
   const [repos, setRepos] = useState([]);
-  const [selectedRepo, setSelectedRepo] = useState('');
 
   // To fetch the GIT urls from the api
+  
   useEffect(() => {
     const fetchRepos = async () => {
       try {
@@ -25,7 +25,6 @@ const GitRepoDropdown = ({ onSelectRepo }) => {
   // To set the drop down value and notify about the change
   const handleChange = (event) => {
     const repoUrl = event.target.value;
-    setSelectedRepo(repoUrl);
     onSelectRepo(repoUrl);
   };
 
@@ -39,7 +38,6 @@ const GitRepoDropdown = ({ onSelectRepo }) => {
       <Select
         labelId="repo-select-label"
         id="repo-select"
-        value={selectedRepo}
         label={DROPDOWN_PLACEHOLDER}
         onChange={handleChange}
       >
