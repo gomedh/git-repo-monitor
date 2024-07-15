@@ -49,5 +49,11 @@ To get started with this project, follow these steps:
 2. Material UI: For the styling and user interface components.
 3. Recharts: For the charting library used to visualize programming languages.
 
+## Developer Notes
+
+1. Added only basic test cases for Home Screen Component only, need to add more test cases for other components
+2. Need to prevent the modal from closing when clicking outside (Default behaviour of MatUI modal)
+3. Need to check the UI look of initial modal UI , when user clicks on it.
+
 
 
