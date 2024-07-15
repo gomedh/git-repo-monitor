@@ -49,8 +49,7 @@ const RepoModal = ({ open, onClose }) => {
             {REPO_SELECT_LABEL}
           </Typography>
           <GitRepoDropdown onSelectRepo={handleSelectRepo} />
-          {/* Show language chart content section when the repo is selected  */}
-          {selectedRepoUrl &&  <GitRepoLanguages repoUrl={selectedRepoUrl} /> }
+          <GitRepoLanguages repoUrl={selectedRepoUrl} /> 
         </Box>
       </Box>
     </Modal>
